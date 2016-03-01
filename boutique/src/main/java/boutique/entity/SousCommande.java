@@ -6,32 +6,33 @@
 package boutique.entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 /**
  *
  * @author admin
  */
-    @Entity
-public class ModeLivraison implements Serializable {
+@Entity
+public class SousCommande implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String nom;
-    private Long cout;
+    private Integer quantite;
     
-    @OneToMany(mappedBy = "modeLivraison")
-    private List<Commande> Commande = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "ARTICLES_ID")
+    private Article article;
+    
+    @ManyToOne
+    @JoinColumn(name = "COMMANDES_ID")
+    private Commande commande;
 
     public Long getId() {
         return id;
@@ -41,28 +42,28 @@ public class ModeLivraison implements Serializable {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public Integer getQuantite() {
+        return quantite;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setQuantite(Integer quantite) {
+        this.quantite = quantite;
     }
 
-    public Long getCout() {
-        return cout;
+    public Article getArticle() {
+        return article;
     }
 
-    public void setCout(Long cout) {
-        this.cout = cout;
+    public void setArticle(Article article) {
+        this.article = article;
     }
 
-    public List<Commande> getCommande() {
-        return Commande;
+    public Commande getCommande() {
+        return commande;
     }
 
-    public void setCommande(List<Commande> Commande) {
-        this.Commande = Commande;
+    public void setCommande(Commande commande) {
+        this.commande = commande;
     }
     
     

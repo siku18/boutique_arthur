@@ -27,4 +27,38 @@ public class CodePromo implements Serializable {
     private String Code;
     private TypeCodeEnum typeCodeEnum;
     private Long Valeur;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCode() {
+        return Code;
+    }
+
+    public void setCode(String Code) {
+        this.Code = Code;
+    }
+
+    public TypeCodeEnum getTypeCodeEnum() {
+        return typeCodeEnum;
+    }
+
+    public void setTypeCodeEnum(TypeCodeEnum typeCodeEnum) {
+        this.typeCodeEnum = typeCodeEnum;
+    }
+
+    public Long getValeur() {
+        return Valeur;
+    }
+
+    public void setValeur(Long Valeur) {
+        this.Valeur = Valeur;
+    }
+    
+    
 }
