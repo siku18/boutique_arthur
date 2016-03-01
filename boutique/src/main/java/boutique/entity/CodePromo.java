@@ -7,6 +7,7 @@ package boutique.entity;
 
 import boutique.enumeration.TypeCodeEnum;
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +24,7 @@ public class CodePromo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
+    @Column(length = 32)
     private String Code;
     private TypeCodeEnum typeCodeEnum;
     private Long Valeur;
