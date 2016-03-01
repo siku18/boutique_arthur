@@ -3,6 +3,12 @@
   <persistence-unit name="PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>boutique.entity.Effacemoi</class>
+    <class>boutique.entity.Article</class>
+    <class>boutique.entity.Categorie</class>
+    <class>boutique.entity.CodePromo</class>
+    <class>boutique.entity.Commande</class>
+    <class>boutique.entity.ModeLivraison</class>
+    <class>boutique.entity.Utilisateur</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/boutique"/>
       <property name="javax.persistence.jdbc.user" value="boutique"/>
