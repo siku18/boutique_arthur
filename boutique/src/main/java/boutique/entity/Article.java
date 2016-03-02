@@ -5,11 +5,14 @@
  */
 package boutique.entity;
 
+import boutique.enumeration.GenreArticleEnum;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,6 +36,9 @@ public class Article implements Serializable {
     private String nom;
     private Long Stock;
     private Long prix;
+    
+    @Enumerated(EnumType.STRING)
+    private GenreArticleEnum genre;
     
     
     @ManyToOne

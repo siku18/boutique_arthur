@@ -34,9 +34,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @SpringApplicationConfiguration(classes=SpringConfig.class)
 public class BoutiqueTest {
     
-    @PersistenceContext
-    private EntityManager em;
-    
     @Autowired
     private ArticleService articleService;
     

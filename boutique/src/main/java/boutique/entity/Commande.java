@@ -35,6 +35,7 @@ public class Commande implements Serializable {
     private Date dateCommande;
     private Long prixTotal;
     private boolean payee;
+    private boolean livree;
     
     @ManyToOne
     @JoinColumn(name = "UTILISATEUR_ID")
@@ -46,6 +47,14 @@ public class Commande implements Serializable {
     
     @OneToMany(mappedBy = "commande")
     private List<SousCommande> sousCommande = new ArrayList<>();
+
+    public boolean isLivree() {
+        return livree;
+    }
+
+    public void setLivree(boolean livree) {
+        this.livree = livree;
+    }
 
     public Long getId() {
         return id;

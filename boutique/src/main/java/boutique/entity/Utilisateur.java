@@ -5,11 +5,14 @@
  */
 package boutique.entity;
 
+import boutique.enumeration.TypeUtilisateurEnum;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -37,6 +40,8 @@ public class Utilisateur implements Serializable {
     private String nom;
     @Column(length = 32)
     private String prenom;
+    @Enumerated(EnumType.STRING)
+    private TypeUtilisateurEnum typeUtil;
     
     
     @OneToMany(mappedBy = "utilisateur")
